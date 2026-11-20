@@ -2,7 +2,7 @@
 VOICE: calm, warm, trustworthy — a morning, not a sales pitch.
 IDEA: the page is the sky of the Upbeam app: sunrise by day, moonlit at night.
 PICTURE: a sun (moon at night) rising out of a soft horizon with the app's "rings in" card.
-COLOUR and TYPE: warm beige sky, ink brown, sun gold accent; night indigo. San Francisco (Apple system font) throughout, Inter as the fallback off Apple devices.
+COLOUR and TYPE: warm beige sky, ink brown, sun gold accent; night indigo. Geist throughout, large confident headlines; coral accent from the sunrise.
 LAYOUT: full-bleed sky hero, then calm bands; guides as a readable 680px column.
 */
 :root{
@@ -15,7 +15,9 @@ LAYOUT: full-bleed sky hero, then calm bands; guides as a readable 680px column.
   --card:light-dark(rgba(255,255,255,.62),rgba(255,255,255,.06));
   --sun:light-dark(#F4A63A,#ECE9FF);
   --glow:light-dark(#FFE2B8,#2A3062);
-  --accent:light-dark(#B8611A,#C9C2FF);
+  --accent:light-dark(#D4513E,#FF8E7E);
+  --coral:light-dark(#D4513E,#FF8E7E);
+  --coralink:light-dark(#FFFFFF,#1A0F0C);
   --btn:light-dark(#2B2118,#EEF0FF);
   --btnink:light-dark(#FBF6EE,#0B0D24);
   --stars:light-dark(0,1);
@@ -27,12 +29,12 @@ LAYOUT: full-bleed sky hero, then calm bands; guides as a readable 680px column.
 :root[data-theme=light]{--stars:0}
 *{box-sizing:border-box;min-width:0}
 html{scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;letter-spacing:-.011em;font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;letter-spacing:-.011em;font:18px/1.65 Geist,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;overflow-x:clip}
 a{color:var(--accent);text-underline-offset:3px}
-h1,h2,h3{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:600;letter-spacing:-.022em;line-height:1.08;text-wrap:balance;margin:0 0 .4em}
-h1{font-size:clamp(36px,6vw,56px)}
-h2{font-size:clamp(28px,3.6vw,38px)}
-h3{font-size:21px;line-height:1.24;letter-spacing:-.012em}
+h1,h2,h3{font-family:Geist,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;font-weight:600;letter-spacing:-.035em;line-height:1.04;text-wrap:balance;margin:0 0 .4em}
+h1{font-size:clamp(44px,7.2vw,76px)}
+h2{font-size:clamp(32px,4.4vw,48px)}
+h3{font-size:22px;line-height:1.25;letter-spacing:-.02em}
 p{margin:0 0 1em}
 .wrap{max-width:1180px;margin:0 auto;padding:0 max(5vw,18px)}
 .band{padding:clamp(40px,6vw,88px) 0}
@@ -43,20 +45,20 @@ p{margin:0 0 1em}
 /* nav */
 nav.top{position:sticky;top:0;z-index:10;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
 nav.top .wrap{display:flex;align-items:center;gap:22px;min-height:62px;flex-wrap:wrap}
-.logo{display:flex;align-items:center;gap:9px;letter-spacing:-.015em;font:600 21px -apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);text-decoration:none;margin-right:auto}
+.logo{display:flex;align-items:center;gap:9px;letter-spacing:-.015em;font:600 21px Geist,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;color:var(--ink);text-decoration:none;margin-right:auto}
 .logo i{width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 40% 38%,#FFE7B0,var(--sun) 60%);box-shadow:0 0 18px var(--sun)}
 nav.top a.l{color:var(--ink);text-decoration:none;font-size:15px}
 nav.top a.l:hover{color:var(--accent)}
 
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--btn);color:var(--btnink);font-weight:600;font-size:16px;text-decoration:none;border:0}
+.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;background:var(--coral);color:var(--coralink);font-weight:600;font-size:17px;letter-spacing:-.01em;box-shadow:0 10px 24px -12px color-mix(in srgb,var(--coral) 70%,transparent);text-decoration:none;border:0}
 .btn svg{width:18px;height:18px;fill:currentColor}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line);box-shadow:none}
 .btn:focus-visible,a:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
 
 /* hero sky */
 .hero{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 72% 78%,var(--glow),var(--bg) 62%)}
 .hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center;padding-top:clamp(40px,7vw,96px);padding-bottom:clamp(40px,7vw,96px)}
-.hero p.lead{font-size:clamp(18px,2vw,21px);color:var(--sub);max-width:34em}
+.hero p.lead{font-size:clamp(19px,2.2vw,23px);line-height:1.5;color:var(--sub);max-width:34em}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 14px}
 .sky{position:relative;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
 .sky svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
@@ -64,7 +66,7 @@ nav.top a.l:hover{color:var(--accent)}
 .sky .body{fill:var(--sun)}
 .sky .halo{fill:var(--sun);opacity:.22}
 .ringcard{position:absolute;left:6%;right:6%;bottom:2%;padding:18px 20px;border-radius:24px;background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:0 20px 50px -24px rgba(43,33,24,.4)}
-.ringcard b{display:block;letter-spacing:-.022em;font:600 34px/1 -apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;white-space:nowrap}
+.ringcard b{display:block;color:var(--coral);letter-spacing:-.022em;font:600 34px/1 Geist,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;white-space:nowrap}
 .ringcard .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
 .nudges{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
 .nudges span{padding:6px 12px;border-radius:999px;border:1px solid var(--line);font-size:14px;white-space:nowrap}
@@ -79,9 +81,9 @@ nav.top a.l:hover{color:var(--accent)}
 /* pricing */
 .prices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px;align-items:stretch}
 .price{padding:26px;border-radius:22px;border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column}
-.price .amt{letter-spacing:-.022em;font:600 40px/1 -apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Helvetica Neue",Helvetica,Arial,sans-serif;margin:10px 0 4px;white-space:nowrap}
-.price.hero-p{background:var(--btn);color:var(--btnink);border-color:transparent}
-.price.hero-p .sub,.price.hero-p .small{color:color-mix(in srgb,var(--btnink) 72%,transparent)}
+.price .amt{letter-spacing:-.022em;font:600 40px/1 Geist,-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;margin:10px 0 4px;white-space:nowrap}
+.price.hero-p{background:var(--coral);color:var(--coralink);border-color:transparent}
+.price.hero-p .sub,.price.hero-p .small{color:color-mix(in srgb,var(--coralink) 80%,transparent)}
 .tag{display:inline-block;align-self:flex-start;padding:4px 10px;border-radius:999px;background:var(--sun);color:#2B2118;font-size:13px;font-weight:600}
 
 /* promise */
@@ -107,7 +109,7 @@ details p{margin:10px 0 0;color:var(--sub)}
 /* article */
 .article{max-width:700px;margin:0 auto;padding:0 max(5vw,18px)}
 .article header{padding:clamp(36px,6vw,72px) 0 20px}
-.article h2{margin-top:1.6em;font-size:clamp(25px,3vw,31px)}
+.article h2{margin-top:1.6em;font-size:clamp(27px,3.2vw,34px)}
 .article h3{margin-top:1.3em}
 .article li{margin-bottom:.5em}
 .crumbs{font-size:14px;color:var(--sub);margin-bottom:14px}
