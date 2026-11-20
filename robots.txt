@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://getupbeam.com/sitemap.xml
