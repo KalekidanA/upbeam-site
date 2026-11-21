@@ -30,4 +30,4 @@ One-time setup in the Cloudflare dashboard:
 2. **Workers & Pages › upbeam › Settings › Bindings › Add › D1 database**: variable name `WAITLIST_DB`, database `upbeam-waitlist`. Add it for both **Production** and **Preview**.
 3. Redeploy (or merge the next change). Until the binding exists, the form politely says the waitlist isn't open yet.
 
-See the list: open the database in D1 and run `SELECT * FROM waitlist ORDER BY joined_at;`. Export it as CSV from the same screen when you choose an email tool. `future_apps = 1` means the person also agreed to hear about future apps.
+See the list: open the database in D1 and run `SELECT * FROM waitlist ORDER BY joined_at;`. Export it as CSV from the same screen when you choose an email tool. `future_apps = 1` means the person agreed to emails about your apps (everyone who joined after the checkbox was removed). `0` means they joined earlier and only asked for the launch email.
