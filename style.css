@@ -150,3 +150,4 @@ footer .logo{font-size:18px;margin-right:auto}
 .waitlist .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .waitlist.done .row{opacity:.55}
 .wl-lead{margin:26px 0 0}
+.price .amt s.was{font-size:.5em;font-weight:500;opacity:.7;margin-right:4px;vertical-align:middle}
