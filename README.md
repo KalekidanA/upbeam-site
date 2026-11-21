@@ -31,3 +31,16 @@ One-time setup in the Cloudflare dashboard:
 3. Redeploy (or merge the next change). Until the binding exists, the form politely says the waitlist isn't open yet.
 
 See the list: open the database in D1 and run `SELECT * FROM waitlist ORDER BY joined_at;`. Export it as CSV from the same screen when you choose an email tool. `future_apps = 1` means the person agreed to emails about your apps (everyone who joined after the checkbox was removed). `0` means they joined earlier and only asked for the launch email.
+
+## Emails: unsubscribing must be easy
+
+Rules for every email sent to the waitlist or any future list (Cyber Sales follows these too):
+
+- **Unsubscribe button in every email:** clearly visible in the footer, plus the one-click `List-Unsubscribe` and `List-Unsubscribe-Post` headers so Gmail and Apple Mail show their own Unsubscribe button.
+- **Two steps at most:** the button opens a preferences page that already knows who the person is (no login, no retyping the email). They untick any category (Upbeam launch and updates, news about other apps, guides) or press **Unsubscribe from everything**, and it's done.
+- **Clear categories:** each email belongs to one category, the footer says why the person is getting it, and people only get categories they signed up for.
+- **Immediate:** an unsubscribe takes effect at once; no "allow 10 days", no "are you sure?" emails.
+- **Easy way back:** the preferences page lets people re-subscribe.
+- Footer always includes support@getupbeam.com and the sender's contact details, in line with CAN-SPAM and GDPR.
+
+When an email tool is chosen, pick one that supports per-category preference pages and one-click unsubscribe headers.
