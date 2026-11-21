@@ -34,7 +34,9 @@ export async function onRequestPost({ request, env }) {
   if (email.length > 254 || !EMAIL_RE.test(email)) {
     return reply(request, false, 'Please enter a valid email address.');
   }
-  const futureApps = form.get('future_apps') ? 1 : 0;
+  // Joining means agreeing to emails about our apps (stated under the form).
+  // Older rows with 0 joined before that wording and only asked for the launch email.
+  const futureApps = 1;
   const source = (form.get('source') || '').toString().slice(0, 80);
 
   if (!env.WAITLIST_DB) {
@@ -61,7 +63,7 @@ export async function onRequestPost({ request, env }) {
     return reply(request, false, 'Something went wrong. Please try again.', 500);
   }
 
-  return reply(request, true, "You're on the list. We'll email you once, on launch day.");
+  return reply(request, true, "You're on the list. We'll email you a download link on launch day.");
 }
 
 export function onRequest({ request }) {
