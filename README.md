@@ -44,3 +44,7 @@ Rules for every email sent to the waitlist or any future list (Cyber Sales follo
 - Footer always includes support@getupbeam.com and the sender's contact details, in line with CAN-SPAM and GDPR.
 
 When an email tool is chosen, pick one that supports per-category preference pages and one-click unsubscribe headers.
+
+## Caching
+
+Pages link to `style.css?v=YYYYMMDD` and `waitlist.js?v=YYYYMMDD`. When you change either file, bump the date in every page (one search-and-replace) so visitors get the new version at once. `_headers` also tells browsers to re-check CSS and JS on each visit.

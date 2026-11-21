@@ -1,0 +1,6 @@
+# Cloudflare Pages headers: browsers re-check CSS and JS on every visit,
+# so style changes show up right away instead of after a cached copy expires.
+/*.css
+  Cache-Control: public, max-age=0, must-revalidate
+/*.js
+  Cache-Control: public, max-age=0, must-revalidate
