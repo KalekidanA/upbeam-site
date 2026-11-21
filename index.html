@@ -30,6 +30,16 @@
         <a class="btn ghost" href="guides/index.html">Read the wake-up guides</a>
       </div>
       <p class="small">For iPhone with iOS 26 or later · Free to start · No ads, ever</p>
+      <div id="waitlist">
+      <p class="wl-lead"><strong>Join the waitlist</strong> for a launch-day price on Lifetime that's only for the waitlist. One email when Upbeam launches, nothing else.</p>
+      <form class="waitlist" action="/api/waitlist" method="post">
+    <div class="row"><input type="email" name="email" required autocomplete="email" placeholder="you@example.com" aria-label="Email address"><button class="btn" type="submit">Join the waitlist</button></div>
+    <label class="opt"><input type="checkbox" name="future_apps" value="1"> Also tell me about future apps from the Upbeam team (a few emails a year at most)</label>
+    <div class="hp" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <input type="hidden" name="source" value="home-hero">
+    <p class="wl-msg" role="status" aria-live="polite"></p>
+  </form>
+      </div>
     </div>
     <div class="sky" aria-label="Illustration: the sun rising in the Upbeam sky above an alarm card that says rings in 7 hours 12 minutes">
       <svg viewBox="0 0 400 400" aria-hidden="true">
@@ -75,7 +85,7 @@
     <div class="price"><span class="sub">Premium</span><div class="amt">$19.99<span style="font-size:18px"> / year</span></div><p class="small">Or $1.99 a week. All missions, all sounds, full history, sunrise streak and widgets.</p></div>
     <div class="price hero-p"><span class="tag">Best value</span><div class="amt" style="margin-top:14px">$39.99</div><span class="sub">Lifetime · pay once</span><p class="small" style="margin-top:10px">Everything in Premium, forever. No subscription to remember.</p></div>
   </div>
-  <p class="small" style="margin-top:16px">Prices in US dollars. Purchases are made through the App Store.</p>
+  <p class="small" style="margin-top:16px">Prices in US dollars. Purchases are made through the App Store. People on the <a href="#waitlist">waitlist</a> get a launch-day price on Lifetime.</p>
 </div></section>
 
 <section class="band" id="privacy"><div class="wrap promise">
@@ -123,5 +133,6 @@ if(g){let s='',x=7;const r=()=>(x=(x*9301+49297)%233280)/233280;
 for(let i=0;i<70;i++){const cx=(r()*400).toFixed(1),cy=(r()*250).toFixed(1),rad=(r()*1.3+.4).toFixed(2),o=(r()*.6+.3).toFixed(2);s+=`<circle cx="${cx}" cy="${cy}" r="${rad}" opacity="${o}"/>`}
 g.innerHTML=s}
 }</script>
+<script src="waitlist.js" defer></script>
 </body>
 </html>

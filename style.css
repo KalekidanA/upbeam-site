@@ -136,3 +136,17 @@ footer .logo{font-size:18px;margin-right:auto}
 @media (max-width:900px){.grid3,.glist,.prices{grid-template-columns:minmax(0,1fr)}.promise{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:760px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.sky{max-width:420px}nav.top a.l.hide{display:none}}
 @media (max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px;border-bottom:1px solid var(--line)}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;font-weight:600}}
+
+/* waitlist */
+.waitlist{margin:18px 0 6px;max-width:34em}
+.waitlist .row{display:flex;flex-wrap:wrap;gap:10px}
+.waitlist input[type=email]{flex:1 1 15em;min-height:52px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font:inherit;font-size:17px}
+.waitlist input[type=email]:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.waitlist button.btn{cursor:pointer;font-family:inherit}
+.waitlist button.btn:disabled{opacity:.6}
+.waitlist label.opt{display:flex;gap:8px;align-items:flex-start;margin-top:10px;font-size:14px;color:var(--sub)}
+.waitlist label.opt input{margin-top:4px;accent-color:var(--coral)}
+.waitlist .wl-msg{min-height:1.5em;margin:8px 0 0;font-size:15px;font-weight:600;color:var(--ink)}
+.waitlist .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.waitlist.done .row{opacity:.55}
+.wl-lead{margin:26px 0 0}
