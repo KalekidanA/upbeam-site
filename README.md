@@ -32,6 +32,18 @@ One-time setup in the Cloudflare dashboard:
 
 See the list: open the database in D1 and run `SELECT * FROM waitlist ORDER BY joined_at;`. Export it as CSV from the same screen when you choose an email tool. `future_apps = 1` means the person agreed to emails about your apps (everyone who joined after the checkbox was removed). `0` means they joined earlier and only asked for the launch email.
 
+## Admin page (getupbeam.com/admin)
+
+A private page listing every waitlist email, newest first, with totals, search, "Copy emails" and "Download CSV". It is locked with Cloudflare Access (Zero Trust, free for up to 50 users): only the emails you allow can sign in, using a one-time code sent to that inbox. The data comes from `functions/api/admin/waitlist.js`, which also checks the Access sign-in itself (`lib/access.js`), so the list can't be read from upbeam.pages.dev or preview links either. Until the setup below is done, the page shows "You need to sign in" and no emails.
+
+One-time setup in the Cloudflare dashboard:
+
+1. **Zero Trust** (left menu). The first time, pick a team name (e.g. `upbeam`) and the **Free** plan.
+2. **Access › Applications › Add an application › Self-hosted.** Name: `Upbeam admin`. Add two public hostnames: `getupbeam.com` with path `admin`, and `getupbeam.com` with path `api/admin`. Add the same two for `www.getupbeam.com`.
+3. **Policy:** name `Only me`, action **Allow**, include **Emails** → your admin email. Login method: **One-time PIN**. Save.
+4. Copy two values: the application's **Application Audience (AUD) Tag** (on the application's overview), and your **team domain** (Zero Trust › Settings, e.g. `upbeam.cloudflareaccess.com`).
+5. **Workers & Pages › upbeam › Settings › Variables and secrets** (Production): add `ACCESS_TEAM_DOMAIN` = the team domain, `ACCESS_AUD` = the AUD tag, `ADMIN_EMAILS` = your admin email (comma-separate several). Then redeploy.
+
 ## Emails: unsubscribing must be easy
 
 Rules for every email sent to the waitlist or any future list (Cyber Sales follows these too):
